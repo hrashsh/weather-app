@@ -15,8 +15,9 @@
 				console.log(data);
 				weather = data.weather[0].description;
 				humidity = data.main.humidity;
-				windspeed = data.main.windspeed;
-				temp = data.main.temp - 273.15;
+				windspeed = data.wind.speed;
+				temp = data.main.temp - 273.15 ;
+				
 			})
 			.catch((err) => {
 				weather = "city not found";
@@ -35,7 +36,7 @@
 				<p colspan="3">
 					<input class="display-box" type="text"  bind:value={city} />
 				</p>
-				<p><button on:click={inputHandler} height='5px' /></p>
+				<p><button on:click={inputHandler} /></p>
 			</div>
 			<div class="B">
 				<p><span id="time" /></p>
